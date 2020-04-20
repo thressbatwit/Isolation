@@ -1,5 +1,7 @@
 package application;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -19,6 +21,7 @@ public class Player {
 	//the player object knows about its graphic
 	private Rectangle graphic;
 	
+	private boolean isTurn;	
 	/**
 	 * Constructor, sets location and graphic
 	 * 
@@ -26,9 +29,10 @@ public class Player {
 	 * @param y    y-Location data for the element
 	 * @param size Physical size of the graphic (Rectangle)
 	 */
-	Player(int x, int y, int size, Color c){
+	Player(int x, int y, int size, Color c, boolean isTurn){
 		this.x=x;
 		this.y=y;
+		isTurn = false;
 		graphic=new Rectangle(size,size);
 		graphic.setFill(c);
 	}
@@ -47,11 +51,14 @@ public class Player {
 	 * @param p The GridPane that this player belongs to
 	 */
 	public void move(int x, int y, GridPane p) {
+		
 		//update the Player class data
 		this.x=x;
 		this.y=y;
 		//remove the player graphic from the grid
 		p.getChildren().remove(graphic);
+		
+		
 		//add the player graphic to the grid in
 		//its new location
 		p.add(graphic, x, y); //THIS is now we connect to the GridPane
@@ -80,4 +87,9 @@ public class Player {
 	public int getY() {
 		return y;
 	}
+	
+	public boolean getIsTurn() {
+		return isTurn;
+	}
+	
 }
