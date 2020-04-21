@@ -70,11 +70,11 @@ public class Main extends Application {
 			g[10][10].changeFill(Color.LIME);
 			
 			//create player object and add player to gridpane
-			Player p1 = new Player(10,10,graphicSize, Color.RED, true);
+			Player p1 = new Player(10,10,graphicSize, Color.RED);
 			root.add(p1.getGraphic(), 10, 10);
 			
 			//player 2 object
-			Player p2 = new Player(1,1,graphicSize, Color.BLUE, false);
+			Player p2 = new Player(1,1,graphicSize, Color.BLUE);
 			root.add(p2.getGraphic(), 1, 1);
 			
 			
