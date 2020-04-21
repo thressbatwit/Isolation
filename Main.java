@@ -8,6 +8,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import application.Clock;
 
 /**
  * Program to demonstrate GridPane usage.
@@ -25,6 +26,8 @@ import javafx.scene.paint.Color;
  * @author schuster
  */
 public class Main extends Application {
+	
+	Clock c = new Clock();
 	
 	//Variables to determine gird and window size
 	public final static int GRIDHEIGHT=12;
